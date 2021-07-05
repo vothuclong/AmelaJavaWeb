@@ -3,6 +3,9 @@ package com.company;
 import java.util.Arrays;
 import java.util.Comparator;
 
+public interface Colorable {
+    void howToColor();
+}
 public class Main {
         public static void main(String[] args) {
             Circle[] circles = new Circle[3];
