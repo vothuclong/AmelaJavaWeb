@@ -1,29 +1,17 @@
 package com.company;
 
-import java.util.Arrays;
-import java.util.Comparator;
-
-public interface Colorable {
-    void howToColor();
-}
 public class Main {
-        public static void main(String[] args) {
-            Circle[] circles = new Circle[3];
-            circles[0] = new Circle(3.6);
-            circles[1] = new Circle();
-            circles[2] = new Circle(3.5, "indigo", false);
+    public static void main(String[] args){
+        Shape[] shapes = new Shape[5];
+        shapes[0] = new Square(1.2);
+        shapes[1] = new Circle(2.5);
+        shapes[2] = new Rectangle(2.2, 5.5);
 
-            System.out.println("Pre-sorted:");
-            for (Circle circle : circles) {
-                System.out.println(circle);
-            }
-
-            Comparator circleComparator = new CircleComparator();
-            Arrays.sort(circles, circleComparator);
-
-            System.out.println("After-sorted:");
-            for (Circle circle : circles) {
-                System.out.println(circle);
+        for (Shape shape : shapes){
+            System.out.println(shape.toString());
+            if (shape instanceof Colorable){
+                ((Colorable)shape).howToColor();
             }
         }
+    }
 }
